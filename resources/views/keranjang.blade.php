@@ -62,7 +62,9 @@
           <li class="nav-item">
             <a class="nav-link active position-relative" href="/keranjang">
               <i class="fas fa-shopping-cart"></i>
-              <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">0</span>
+              <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                {{ session('cart') ? collect(session('cart'))->sum('quantity') : 0 }}
+              </span>
             </a>
           </li>
         </ul>
@@ -147,7 +149,7 @@
                     <option value="">-- Pilih Metode --</option>
                     <option value="Transfer Bank">Transfer Bank/BANK BTN A/N FAJAR 241016-1021-4534</option>
                     <option value="COD (Bayar di Tempat)">COD (Bayar di Tempat)</option>
-                    <option value="E-Wallet (Dana, OVO, Gopay)">E-Wallet (Dana, OVO, Gopay)FAJAR/085710480831</option>
+                    <option value="E-Wallet (Dana, OVO, Gopay)">E-Wallet (Dana, OVO, Gopay) FAJAR/085710480831</option>
                   </select>
                 </div>
 
